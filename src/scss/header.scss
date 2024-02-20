@@ -1,0 +1,20 @@
+.header {
+    padding-top: toRem(20);
+    padding-bottom: toRem(10);
+    border-bottom: 1px solid #000;
+    &__container {
+        text-align: center;
+    }
+    &__link {
+        font-size: toRem(28);
+        transition: opacity 0.3s;
+        &:active {
+            opacity: 0.6;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+}

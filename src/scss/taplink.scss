@@ -1,0 +1,120 @@
+//====================================================================================================
+.taplink-wrapper {
+    background-color: $lightSilverColor;
+}
+.taplink {
+    padding-top: toRem(40);
+    padding-bottom: toRem(150);
+    &__container {
+    }
+    &__image-wrapper {
+        @include adaptiveValue("max-width", 350, 200, 0, 768, 320);
+        margin: 0 auto;
+        position: relative;
+        margin-bottom: toRem(30);
+        &::before {
+            content: "welcome";
+            @include adaptiveValue("font-size", 240, 130, 0, 768, 320);
+            position: absolute;
+            top: 0;
+            line-height: 0;
+            font-family: "Buongiorno Rastellino", sans-serif;
+            z-index: 2;
+            color: $orangeColor;
+            transform: rotate(-22deg) translate(-41%, 10px);
+        }
+    }
+    &__image {
+        border-radius: 50%;
+        overflow: hidden;
+        padding-bottom: 100%;
+        position: relative;
+        @media (any-hover: hover) {
+            &:hover {
+                img {
+                    transform: scale(1.05);
+                }
+            }
+        }
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: bottom;
+            transition: transform 0.5s ease-in;
+        }
+    }
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        gap: toRem(15);
+        width: 100%;
+        @media (max-width: $tablet) {
+            padding-left: toRem(50);
+        }
+        @media (max-width: $mobile) {
+            padding-left: toRem(15);
+        }
+    }
+    &__button-wrapper {
+        position: relative;
+    }
+    &__arrow-for-button {
+        position: absolute;
+        top: 50%;
+        right: calc(100% + toRem(15));
+        transform: translate(0, -50%);
+        width: 200px;
+        @media (max-width: $mobile) {
+            width: 150px;
+            right: calc(100% + toRem(10));
+        }
+    }
+    &__button {
+    }
+}
+.button {
+    padding: toRem(15) toRem(20);
+    border-radius: 100px;
+    font-size: toRem(20);
+    @include adaptiveValue("font-size", 20, 16, 0, 768, 320);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: $mainColor;
+    color: $creamColor;
+    transition:
+        opacity 0.3s,
+        background-color 0.3s;
+    @media (any-hover: hover) {
+        &:hover {
+            opacity: 0.8;
+        }
+        &:active {
+            opacity: 0.8;
+        }
+    }
+    @media (max-width: $mobileSmall) {
+        padding: toRem(10);
+        line-height: 1.3;
+    }
+    &--white {
+        border: 1px solid $silverColor;
+        background-color: #fff;
+        color: $mainColor;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #f8f8f8;
+            }
+        }
+        &:active {
+            background-color: #f8f8f8;
+        }
+    }
+}
+
+//====================================================================================================
