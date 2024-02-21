@@ -880,6 +880,11 @@ body {
           transform: rotate(-15deg);
 }
 
+.faq__spollers {
+  max-width: 34.375rem;
+  margin: 0 auto;
+}
+
 .service {
   text-align: center;
 }
