@@ -348,7 +348,6 @@ body {
 }
 
 .header__link {
-  font-size: 1.75rem;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
@@ -991,6 +990,10 @@ body {
 }
 
 @media (min-width: 48em) {
+  .header__link {
+    font-size: 1.75rem;
+  }
+
   .footer__text {
     font-size: 1.375rem;
   }
@@ -1103,6 +1106,10 @@ body {
 }
 
 @media (max-width: 20em) {
+  .header__link {
+    font-size: 1.375rem;
+  }
+
   .footer__text {
     font-size: 1rem;
   }
@@ -1269,6 +1276,18 @@ body {
 }
 
 @media (min-width: 20em) and (max-width: 48em) {
+@supports (font-size: clamp( 1.375rem , 1.1071428571rem  +  1.3392857143vw , 1.75rem )) {
+    .header__link {
+      font-size: clamp( 1.375rem , 1.1071428571rem  +  1.3392857143vw , 1.75rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.375rem , 1.1071428571rem  +  1.3392857143vw , 1.75rem )) {
+    .header__link {
+      font-size: calc(1.375rem + 0.375 * (100vw - 20rem) / 28);
+    }
+}
+
 @supports (font-size: clamp( 1rem , 0.7321428571rem  +  1.3392857143vw , 1.375rem )) {
     .footer__text {
       font-size: clamp( 1rem , 0.7321428571rem  +  1.3392857143vw , 1.375rem );
